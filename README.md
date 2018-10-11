@@ -265,3 +265,244 @@ int main(void)
 }
  
  
+
+#include <stdio.h>
+inline int square(int x)
+inlime int square(int x)
+{
+  return x*x
+}
+int main(void)
+{
+  int i=1;
+  while(i<=100)
+  {
+    printf("%d的平方是%d\n",i-1,square(i++));
+  }
+}
+
+
+#inlcude <stdio.h>
+#define STR(s) # s
+int main(void)
+{
+  printf("%s\n",STR(FISHC));
+  return 0;
+}
+
+
+利用str这个宏  替换 字符串
+#include <stdio.h>
+#define STR(s) # s
+int main (void)
+{
+  printf(STR(hello          %s num=%d\n),), STR(FIshc),520);
+  return 0;
+}
+
+##  链接预处理预算符
+#include <stdio.h>
+#define TOGERHTER(x,y) x##y
+int main(void)
+{
+  printf("%d\n",TOGERTHER(2,50));
+  return 0;
+}
+
+#include <stdio.h>
+#define SHOWLIST(...) printf(# __VA_ARGS__)
+int main(void)
+{
+  SHOWLISST(fishc,520,3.14\n);
+  return 0;
+  
+  结构体声明 一个整体
+  
+  #include <stdio.h>
+  struct Book
+  {
+    char title[128];
+    char author[40];
+    float price;
+    unsigned int date;
+    char publisher[40];
+  }book;
+  int main(void)
+  {
+    printf{"请输入书名："}；
+    scanf("%s",book.title);
+    printf{"请输入作者："}；
+    scanf("%s",book.author);
+    printf{"请输入售价："}；
+    scanf("%f",book.price);
+    printf{"请输入出版日期："}；
+    scanf("%d",book.date);
+    printf{"请输入出版社："}；
+    scanf("%s",book.publisher);
+    printf("\n====数据录入完毕====")；
+    printf("书名:%s\n",book.title);
+    printf("作者:%s\n",book.author);
+    printf("售价:%.2f\n",book.price);
+    printf("出版日期:%s\n",book.date);
+    printf("出版社:%s\n",book.publisher);
+   
+    
+    return 0;
+  }
+}
+
+
+
+
+
+
+  #include <stdio.h>
+  struct Date
+  {
+    int year;
+    int month;
+    int day;
+  };
+  struct Book
+  {
+    char title[128];
+    char author[40];
+    float price;
+    unsigned int date;
+    char publisher[40];
+  }book{
+    "我是声"，
+    "物业乐乐"，
+    48.8，
+    {2017,11,11}，
+    "清华大学出版社"
+  }
+  int main(void)
+  {
+    printf{"请输入书名："}；
+    scanf("%s",book.title);
+    printf{"请输入作者："}；
+    scanf("%s",book.author);
+    printf{"请输入售价："}；
+    scanf("%f",book.price);
+    printf{"请输入出版日期："}；
+    scanf("%d",book.date);
+    printf{"请输入出版社："}；
+    scanf("%s",book.publisher);
+    printf("\n====数据录入完毕====")；
+    printf("书名:%s\n",book.title);
+    printf("作者:%s\n",book.author);
+    printf("售价:%.2f\n",book.price);
+    printf("出版日期::%d-%d-%d\n",book.date.year,book.date.month,book.date.day);
+    printf("出版社:%s\n",book.publisher);
+   
+    
+    return 0;
+  }
+}
+
+
+
+  #include <stdio.h>
+  struct Date
+  {
+    int year;
+    int month;
+    int day;
+  };
+  struct Book
+  {
+    char title[128];
+    char author[40];
+    float price;
+    unsigned int date;
+    char publisher[40];
+  }book{
+    "我是声"，
+    "物业乐乐"，
+    48.8，
+    {2017,11,11}，
+    "清华大学出版社"
+  }
+  int main(void)
+  {
+    struct Book *pt;
+    pt=&book;
+    printf{"请输入书名："}；
+    scanf("%s",book.title);
+    printf{"请输入作者："}；
+    scanf("%s",book.author);
+    printf{"请输入售价："}；
+    scanf("%f",book.price);
+    printf{"请输入出版日期："}；
+    scanf("%d",book.date);
+    printf{"请输入出版社："}；
+    scanf("%s",book.publisher);
+    printf("\n====数据录入完毕====")；
+    printf("书名:%s\n",book.title);
+    printf("作者:%s\n",book.author);
+    printf("售价:%.2f\n",book.price);
+    printf("出版日期::%d-%d-%d\n",book.date.year,book.date.month,book.date.day);
+    printf("出版社:%s\n",book.publisher);
+   
+    
+    return 0;
+  }
+}
+
+
+#include <stdio.h>
+int main(void)
+{
+  sstruct Test
+  {
+    int x;
+    int y;
+  }t1,t2;
+  t1.x=3;
+  t2.y=4;
+  t2=t1;
+  printf("t2.x=%d,t2.y=%d\n",t2.x,t2,y);
+  return 0;
+  
+  
+  #include <stdio.h>
+  struct Date
+  {
+    int year;
+    int month;
+    int day;
+    
+  };
+struct Book
+{
+  char title[128];
+  char author[40];
+  float price;
+  struct Date date;
+  char publisher[40];
+};
+struct Book getInpu(struct Book book);
+struct Book getInpu(struct Book book)
+{
+    printf{"请输入书名："}；
+    scanf("%s",book.title);
+    printf{"请输入作者："}；
+    scanf("%s",book.author);
+    printf{"请输入售价："}；
+    scanf("%f",&book.price);
+    printf{"请输入出版日期："}；
+    scanf("%d-%d-%d",&book.date.year,&book.date.month,&book.date.day);
+    printf{"请输入出版社："}；
+    scanf("%s",book.publisher);
+    
+    return book;
+}
+int main(void)
+{
+  struct Book b1,b2;
+  printf("请录入第一本书的信息...\n");
+  b1=getINPUT(b1);
+  return 0;
+}
+}
