@@ -26,3 +26,8 @@ while trne:
     打印"game over"
     
     总结和学习 分支和循环是了不起的 
+
+
+favourite='fishc'
+for i in favorite:
+  print(i,end='  ')
