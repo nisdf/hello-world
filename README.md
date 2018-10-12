@@ -31,3 +31,8 @@ while trne:
 favourite='fishc'
 for i in favorite:
   print(i,end='  ')
+
+member=['我'，[你]，[ta],[wow！]]
+
+
+
