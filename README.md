@@ -91,3 +91,76 @@ end
  汇编的源程序 中不允许字符开头的地址
  
 
+
+assume cs:code
+code segment
+  mov bx,0
+  mov cx,12
+s:mov ax,0ffffh
+  mov ds,ax
+  mov dl,[bx];
+  mov ax,0020h
+  mov da,ax
+  mov [bx],dl
+  inc bx
+  loop s
+  mov ax,4c00h
+  int 21h
+code ends
+end
+
+
+另外一种写法
+
+assume cs:code
+code segment
+  mov ax,0ffffh
+  mov ds,ax
+  mov ax,0020h
+  mov es,ax
+  mov bx,0
+  mov cx,12
+s:mov dl,[bx]
+  mov es:[bx],dl
+  inc bx
+  loop s
+  mov ax,4c00h
+  int 21h
+code ends
+end
+
+
+在代码段中使用数据举例  dw   就是 字型数据的意思 difine word  d b   define byte
+
+
+assume cs:code
+code segment
+  dw 0123H,0456H,0789H,0abcH,0fedH,0cbaH,0987H
+  mov bx,0
+  mov ax,0
+  mov cx,8
+s：add ax,cs:[bx]
+  add bx,2
+  loop s
+  mov ax,4c00h
+  int 21
+code ends
+end
+
+
+
+assume cs:code
+code segment
+  dw 0123H,0456H,0789H,0abcH,0fedH,0cbaH,0987H
+start mov bx,0
+  mov ax,0
+  mov cx,8
+s：add ax,cs:[bx]
+  add bx,2
+  loop s
+  mov ax,4c00h
+  int 21
+code ends
+end
+
+
