@@ -164,3 +164,5 @@ code ends
 end
 
 
+codesg segment
+    dw 0123H,0456H,0789H
