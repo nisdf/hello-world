@@ -149,6 +149,8 @@ end
 
 
 
+
+
 assume cs:code
 code segment
   dw 0123H,0456H,0789H,0abcH,0fedH,0cbaH,0987H
@@ -166,3 +168,10 @@ end
 
 codesg segment
     dw 0123H,0456H,0789H
+    
+    
+    
+
+转换 字母大小写
+  assume cs:codesg,ds:
+
