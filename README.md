@@ -579,6 +579,81 @@ int main(void)
 }
 
 
+定于 typed   
+#include <stdio.h>
+typedef int(*PTR_TO_ARRAY)[3];
+int main(void)
+{
+  int array[3]={1,2,3};
+  PTR_TO_ARRAY ptr_to_array=&array;
+  int i;
+  for(i=0;i<3;i++)
+  {
+      printf("%d\n",(*ptr_to_array)[i]);
+  }
+  return 0;
+  
+  #include <stdio.h>
+  typedef int (*A)(void);
+  int fun(void)
+  {
+    ruturn 520;
+  }
+  int main(void)
+  {
+    *A a=&fun;
+    printf("%d\n",(*a)());
+    return 0;
+    
+  }
+}
 
 
+#include <stdio.h>
+typedef int *(*ABCD)(int);
+int *funA(int num)
+{
+  printf("%d\n",num);
+  return &num;
+}
+int *funB(int num)
+{
+  printf("%d\n",num);
+  return &num;
+}
+int *funC(int num)
+{
+  printf("%d\n",num);
+  return &num;
+}
+int main(void)
+{
+  ABCD array[3]={&funA,&funB,&func};
+  int;
+  for (i=0；i<3;i++)
+  {
+    printf("addr of num: %p\n",(*array[i](i)));
+  }
+}
+
+#include <stdio.h>
+#include<string.h>
+union Test
+{
+  int i;
+  double pi;
+  char str[6];
+};
+int main(void)
+{
+  union Test test;
+  test.i=520;
+  test.pi=3.14;
+  strcpy(test.str."fishc");
+  printf("addr of test.i:%p\n",&test.i);
+  printf("addr of test.pi:%p\n",&test.pi);
+  printf("addr of test.str:%p\n",&test.str);
+  return 0;
+  
+  }
 
